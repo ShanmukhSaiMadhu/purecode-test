@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import NavComponent from './components/NavComponent';
+import SideList from './components/SideList';
+import Grid from '@mui/material/Unstable_Grid2'; 
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavComponent />
+      <Grid container spacing={2} sx={{marginTop: "1.2rem"}}>
+        <Grid md={2} sx={{paddingTop: "0rem"}} >
+          <SideList />
+        </Grid>
+        <Grid md={10}>
+          <Header />
+        </Grid>
+      </Grid>
     </div>
   );
 }
